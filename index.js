@@ -13,7 +13,7 @@ app.get('/car/:vin', async (req, res) => {
   const vin = req.params.vin;
 
   const browser = await puppeteer.launch({
-    headless: true, // Set to true for production use
+    headless: 'new', // Set to true for production use
     args: ['--no-sandbox', '--disable-setuid-sandbox'] // Required for running in Docker
   });
   const page = await browser.newPage();

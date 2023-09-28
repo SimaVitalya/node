@@ -14,7 +14,8 @@ app.get('/car/:vin', async (req, res) => {
 
   const browser = await puppeteer.launch({
     headless: 'new', // Set to true for production use
-    args: ['--no-sandbox', '--disable-setuid-sandbox'] // Required for running in Docker
+    // args: ['--no-sandbox', '--disable-setuid-sandbox'] // Required for running in Docker
+    waitUntil: 'networkidle0'
   });
   const page = await browser.newPage();
 

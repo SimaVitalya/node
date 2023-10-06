@@ -1,10 +1,11 @@
+GNU nano 6.2                                                                                          index.js
+const express = require('express');
 const app = express();
 // const port = 3000;
 // const port = process.env.PORT || 5000;
-const express = require('express');
 const puppeteer = require('puppeteer');
 const cors = require('cors');
-var serverPort =3000;
+var serverPort = 3000;
 var port = process.env.PORT || serverPort;
 app.use(cors()); // Enable CORS for all routes
 
@@ -14,7 +15,7 @@ app.get('/car/:vin', async (req, res) => {
   const browser = await puppeteer.launch({
     headless: 'new', // Set to true for production use
     executablePath: '/usr/bin/chromium-browser',
-     args: ['--no-sandbox', '--disable-setuid-sandbox'], // Required for running in Docker
+    args: ['--no-sandbox', '--disable-setuid-sandbox'], // Required for running in Docker
     waitUntil: 'networkidle0'
   });
   const page = await browser.newPage();

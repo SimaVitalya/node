@@ -1,4 +1,3 @@
-GNU nano 6.2                                                                                          index.js
 const express = require('express');
 const app = express();
 // const port = 3000;
